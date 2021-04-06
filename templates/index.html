@@ -4,39 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="../static/js/echarts.min.js"></script>
-    <script></script>
     <script src="../static/js/jquery-3.0.0.min.js"></script>
-    <style>
-        body{
-            margin: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/css.css">
 </head>
-<body style="background-color: rgb(16, 12, 42)">
-    <div>
-        <h1 style="text-align: center; color: white">电影票房TOP10</h1>
-    </div>
-    <div id="pe" style="height: 700px;  width: 100%;margin-top: -1em">
-
-    </div>
-    <script>
-        function opa(){
-            $.ajax({
-                url: 'api/request_movie',
-                type:'post',
-                success: function (data){
-                    option.series[0].data=data['movie_list']
-                    pe.setOption(option)
-                },
-                error:function (){
-
-                }
-            })
-        }
-        opa()
-        setInterval(opa, 1000 * 5)
-    </script>
-
-    <script src="../static/js/zhe.js"></script>
+<body>
+<div>
+    <h1 class="top_h1">电影票房TOP<span id="number">10</span></h1>
+    <h3 class="top_h3">总票房:<span id="num"></span><span id="unit"></span>
+        <span class="span_time">北京时间 <span id="year"></span> <span id="time"></span></span>
+    </h3>
+</div>
+<div id="pe"></div>
 </body>
+<script src="../static/js/controller.js"></script>
+<script src="../static/js/zhe.js"></script>
 </html>

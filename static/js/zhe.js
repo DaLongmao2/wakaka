@@ -12,7 +12,7 @@ option = {
         {
             name: '实时票房',
             type: 'pie',
-            radius: ['40%', '70%'],
+            radius: ['40%', '65%'],
             avoidLabelOverlap: false,
             itemStyle: {
                 borderRadius: 10,
@@ -26,7 +26,7 @@ option = {
                   // formatter: '{a} {b} : {c}个 ({d}%)'   设置标签显示内容 ，默认显示{b}
                   // {a}指series.name  {b}指series.data的name
                   // {c}指series.data的value  {d}%指这一部分占总数的百分比
-                  formatter: '{c}万'
+                  formatter: '{b}{c}万'
                 },
             },
             emphasis: {

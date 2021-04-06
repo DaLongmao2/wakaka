@@ -70,11 +70,14 @@ def request_movie(request):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
     }
-    res = requests.get(url, headers=headers).json()['boxOffice']['data']['list']
+    res = requests.get(url, headers=headers).json()
+    res_list = res['boxOffice']['data']['list']
+    res_box = res['boxOffice']['data']['nationalBox']
+    res_time = res['boxOffice']['data']['updateInfo']
     movie_list = []
-    for i in res:
+    for i in res_list:
         data = {}
         data['name'] = i['movieInfo']['movieName']
         data['value'] = i['boxDesc']
         movie_list.append(data)
-    return JsonResponse({'movie_list': movie_list[:10]})
+    return JsonResponse({'movie_list': movie_list, 'res_box': res_box, 'res_time': res_time})

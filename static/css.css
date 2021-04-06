@@ -1,0 +1,7 @@
+body {background-color: rgb(16, 12, 42); margin: 0}
+.top_h1 {text-align: center; color: white}
+#number {color: red}
+.top_h3 {text-align: center; color: chocolate}
+#num {color: darkred}
+.span_time {font-size: .5rem;}
+#pe {height: 700px;  width: 100%;margin-top: -1em}
